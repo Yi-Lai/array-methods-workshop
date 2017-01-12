@@ -8,3 +8,13 @@ printPositives.forEach(function(item){
 })
 console.log(filteredPositives);
 
+//Similar to the previous exercise, write a function called getPositives that takes an array and uses the filter method to return a new array with only the positive numbers.
+
+var getPositives = [49,-32,100,-49,29,-10];
+var filteredPositive = [];
+getPositives.filter(function(getPositive){
+    if(getPositive > 0){
+        filteredPositive.push(getPositive)
+    }
+})
+console.log(filteredPositive);
