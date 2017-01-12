@@ -11,15 +11,23 @@ console.log(filteredPositives);
 //Similar to the previous exercise, write a function called getPositives that takes an array and uses the filter method to return a new array with only the positive numbers.
 
 var morearray = [49,-32,100,-49,29,-10];
-var filteredPositive = morearray.filter(function(element) {
-    return element > 0 ;
-})
+var filteredPositive = morearray.filter(element => element > 0)
 
 console.log(filteredPositive);
 
 //Re-do exercise 1 by first filtering the input array, and then printing the numbers from the filtered array. Your code will look something like: return arr.filter(...).forEach(...).
-numberarray.filter(function(element) {
+function test(element) {
     return element > 0 ;
-}).forEach(function(element) {
+}
+numberarray.filter(test).forEach(function(element) {
     console.log(element);
 })
+
+//Write a function called filterArray that takes a callback function and an array as arguments. Your filterArray function should return a new array that contains only the elements where the callback function returns true.
+var numberz = [12,32,49,23,13];
+
+function filterArray(mytest,myarray){
+    return myarray.filter(mytest)
+}
+filterArray(test,numberz)
+
