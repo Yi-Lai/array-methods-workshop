@@ -57,3 +57,20 @@ function countVowels(str){
 }
 console.log(countVowels("The quick brown fox"));
 
+//6.Write a function called highLow that takes an array of numbers, and returns an object with a property highest containing the highest number, and a property lowest containing the lowest number, using Array.prototype.reduce.
+
+function findExtremes(arr) {    
+    return arr.reduce(function(currentExtremes, num) {
+        if (num < currentExtremes.lowest) {
+            currentExtremes.lowest = num;
+        }
+        if (num > currentExtremes.highest) {
+            currentExtremes.highest = num;
+        }
+        
+        return currentExtremes;
+        
+    }, {lowest: Infinity, highest: -Infinity});
+}
+
+console.log(findExtremes([-100, 100, 500, 50, 25, 0]));
