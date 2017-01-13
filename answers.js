@@ -74,3 +74,24 @@ function findExtremes(arr) {
 }
 
 console.log(findExtremes([-100, 100, 500, 50, 25, 0]));
+
+//7. Write a function called countChars that takes a string, and returns an object where the keys are letters, and the value is the number of times that letter appears.
+
+function countLetters(astring){
+var letters = {};
+
+astring
+	.split("")
+	.filter(function(currentLetter){
+		return currentLetter !== " ";
+	})
+	.forEach(function(currentLetter){
+			if(!letters[currentLetter]){
+				letters[currentLetter] = 0;
+			}
+			letters[currentLetter] = letters[currentLetter] + 1;
+		});
+	return letters;
+}
+console.log(countLetters('How are you doing today?'));
+
