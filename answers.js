@@ -95,3 +95,25 @@ astring
 }
 console.log(countLetters('How are you doing today?'));
 
+//In this exercise, your goal is to create a negate function. negate takes one parameter: another function. negate should return a function that, when called, will return the opposite of what the input function would return on the same input.
+
+function negate(fn) {
+    return function (x){
+        return !fn(x) ; 
+    }
+}
+
+// Original functions
+function isEven(num) {
+  return num % 2 === 0;
+}
+function isEmpty(someList) {
+  return someList.length === 0;
+}
+
+// New functions
+var isOdd = negate(isEven);
+var isNotEmpty = negate(isEmpty);
+
+console.log([1,2,3].filter(isEven)) // [2]
+console.log([1,2,3].filter(isOdd)) // [1,3]
